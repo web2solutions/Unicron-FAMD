@@ -178,5 +178,10 @@ var pet = {
 
 ##### Generate instead write
 
-
-
+- Data models logic - client side and server side
+- Validation logic - client and server side
+- Data access rules - client and server side
+- Component settings
+- CRUD interfaces
+- REST end points
+- Swagger
