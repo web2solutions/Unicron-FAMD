@@ -185,3 +185,6 @@ var pet = {
 - CRUD interfaces
 - REST end points
 - Swagger
+
+![Automated software development diagram](http://i.imgur.com/HINi6PD.jpg)
+
