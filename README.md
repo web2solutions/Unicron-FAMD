@@ -79,76 +79,93 @@ A FAMDS metadata structure shall to be/contain:
 - Provide model versioning
 
 
-Let's check the `pet` `model metadata`:
+Let's check the FAMD for a Petstore:
 
 ```javascript
 
-var pet = {
-    title: "Pet",
-    description: "Pet from the system", // (GFM syntax can be used for rich text representation)
-    properties: [
-    	{
-	        name: "Name",
-	        description: "The pet name", // (GFM syntax can be used for rich text representation)
-	        type: 'string', // http://swagger.io/specification/#dataTypeFormat
-	        default: null,
-	        unique: false,
-	        maxLength: 255,
-	        minLength: 4,
-	        maxItems: 0,
-			minItems: 0,
-	        validate: {
-	            required: true,
-	            rules: 'NotEmpty',
-	        },
-	        ui: {
-	            show_note: false, // show text information
-	            text_note: 'the pet name', // plain text information
-	            mask: '',
-	            form: {
-	                input_label: 'Name',
-	                input_type: 'input',
-	            },
-	            grid: {
-	                column_header: 'Name',
-	                column_align: 'left',
-	                column_type: 'readonly',
-	                column_width: '120px'
-	            }
-	        }
-	    },
-	    {
-	        name: "Status",
-	        description: "The pet status in the system", // (GFM syntax can be used for rich text representation)
-	        type: 'boolean', // http://swagger.io/specification/#dataTypeFormat
-	        default: true,
-	        unique: false,
-	        maxLength: 0,
-	        minLength: 0,
-	        maxItems: 0,
-			minItems: 0,
-	        validate: {
-	            required: true,
-	            rules: '',
-	        },
-	        ui: {
-	            show_note: false, // show text information
-	            text_note: 'The pet status in the system', // text information
-	            mask: '',
-	            form: {
-	                input_label: 'Status',
-	                input_type: 'checkbox',
-	            },
-	            grid: {
-	                column_header: 'Status',
-	                column_align: 'center',
-	                column_type: 'checkbox',
-	                column_width: '120px'
-	            }
-	        }
-	    }
-    ]
-};
+{
+    "title": "FAMD Sample App",
+    "description": "This is a sample Petstore.",
+    "termsOfService": "http://fake.io/terms",
+    "contact": {
+        "name": "Support Channel",
+        "url": "http://www.fake.io/contact",
+        "email": "me@fake.io"
+    },
+    "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "0.0.1",
+    "collections": {
+        "pets": {
+            "model": {
+                "title": "Pet",
+                "description": "Pet from the system", // (GFM syntax can be used for rich text representation)
+                "properties": [{
+                    "name": "Name",
+                    "description": "The pet name", // (GFM syntax can be used for rich text representation)
+                    "type": "string", // http://swagger.io/specification/#dataTypeFormat
+                    "default": null,
+                    "unique": false,
+                    "maxLength": 255,
+                    "minLength": 4,
+                    "maxItems": 0,
+                    "maxItems": 0,
+                    "validate": {
+                        "required": true,
+                        "rules": "NotEmpty",
+                    },
+                    "ui": {
+                        "noteShow": false, // show text information
+                        "noteText": "the pet name", // plain text information
+                        "mask": "",
+                        "form": {
+                            "inputLabel": "Name",
+                            "inputType": "input",
+                        },
+                        "grid": {
+                            "column_header": "Name",
+                            "column_align": "left",
+                            "column_type": "readonly",
+                            "column_width": "120px"
+                        }
+                    }
+                }, {
+                    "name": "Status",
+                    "description": "The pet status in the system", // (GFM syntax can be used for rich text representation)
+                    "type": "boolean", // http://swagger.io/specification/#dataTypeFormat
+                    "default": true,
+                    "unique": false,
+                    "maxLength": 0,
+                    "minLength": 0,
+                    "maxItems": 0,
+                    "minItems": 0,
+                    "validate": {
+                        required: true,
+                        rules: '',
+                    },
+                    ui: {
+                        show_note: false, // show text information
+                        text_note: 'The pet status in the system', // text information
+                        mask: '',
+                        form: {
+                            input_label: 'Status',
+                            input_type: 'checkbox',
+                        },
+                        grid: {
+                            column_header: 'Status',
+                            column_align: 'center',
+                            column_type: 'checkbox',
+                            column_width: '120px'
+                        }
+                    }
+                }]
+            }
+        }
+    }
+}
+
 
 ```
 
