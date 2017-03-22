@@ -83,36 +83,93 @@ Let's check the `pet` `model metadata`:
 
 ```javascript
 
-	var pet = {
-		___"description": "Pets from the system that the user has access to",
-        name: {
-            type: 'string',
-            default: null,
-            unique: false,
-            validate: {
-                required: true,
-                rules: 'NotEmpty',
-            },
-            ui: {
-                show_info: false, // show text information
-                text_note: '', // text information
-                maxlength: '',
-                mask: '',
-                form: {
-                    input_label: 'Name',
-                    input_type: 'input',
-                },
-                grid: {
-                    column_header: 'Name',
-                    column_align: 'left',
-                    column_type: 'readonly',
-                    column_width: '120px'
-                }
-            }
-        },
-    };
+var pet = {
+    title: "Pet",
+    description: "Pet from the system", // (GFM syntax can be used for rich text representation)
+    properties: [
+    	{
+	        name: "Name",
+	        description: "The pet name", // (GFM syntax can be used for rich text representation)
+	        type: 'string', // http://swagger.io/specification/#dataTypeFormat
+	        default: null,
+	        unique: false,
+	        maxLength: 255,
+	        minLength: 4,
+	        maxItems: 0,
+			minItems: 0,
+	        validate: {
+	            required: true,
+	            rules: 'NotEmpty',
+	        },
+	        ui: {
+	            show_note: false, // show text information
+	            text_note: 'the pet name', // plain text information
+	            mask: '',
+	            form: {
+	                input_label: 'Name',
+	                input_type: 'input',
+	            },
+	            grid: {
+	                column_header: 'Name',
+	                column_align: 'left',
+	                column_type: 'readonly',
+	                column_width: '120px'
+	            }
+	        }
+	    },
+	    {
+	        name: "Status",
+	        description: "The pet status in the system", // (GFM syntax can be used for rich text representation)
+	        type: 'boolean', // http://swagger.io/specification/#dataTypeFormat
+	        default: true,
+	        unique: false,
+	        maxLength: 0,
+	        minLength: 0,
+	        maxItems: 0,
+			minItems: 0,
+	        validate: {
+	            required: true,
+	            rules: '',
+	        },
+	        ui: {
+	            show_note: false, // show text information
+	            text_note: 'The pet status in the system', // text information
+	            mask: '',
+	            form: {
+	                input_label: 'Status',
+	                input_type: 'checkbox',
+	            },
+	            grid: {
+	                column_header: 'Status',
+	                column_align: 'center',
+	                column_type: 'checkbox',
+	                column_width: '120px'
+	            }
+	        }
+	    }
+    ]
+};
 
 ```
+
+##### Data types
+
+| Common Name | type    | format    | Comments                                         |
+|-------------|---------|-----------|--------------------------------------------------|
+| integer     | integer | int32     | signed 32 bits                                   |
+| long        | integer | int64     | signed 64 bits                                   |
+| float       | number  | float     |                                                  |
+| double      | number  | double    |                                                  |
+| string      | string  |           |                                                  |
+| byte        | string  | byte      | base64 encoded characters                        |
+| binary      | string  | binary    | any sequence of octets                           |
+| boolean     | boolean |           |                                                  |
+| date        | string  | date      | As defined by full-date - RFC3339                |
+| dateTime    | string  | date-time | As defined by date-time - RFC3339                |
+| password    | string  | password  | Used to hint UIs the input needs to be obscured. |
+
+
+
 
 
 #### Automated software development tools
