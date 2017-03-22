@@ -125,10 +125,10 @@ Let's check the FAMD for a Petstore:
                             "inputType": "input",
                         },
                         "grid": {
-                            "column_header": "Name",
-                            "column_align": "left",
-                            "column_type": "readonly",
-                            "column_width": "120px"
+                            "columnHeader": "Name",
+                            "columnAlign": "left",
+                            "columnType": "readonly",
+                            "columnWidth": "120px"
                         }
                     }
                 }, {
@@ -142,22 +142,22 @@ Let's check the FAMD for a Petstore:
                     "maxItems": 0,
                     "minItems": 0,
                     "validate": {
-                        required: true,
-                        rules: '',
+                        "required": true,
+                        "rules": "",
                     },
-                    ui: {
-                        show_note: false, // show text information
-                        text_note: 'The pet status in the system', // text information
-                        mask: '',
-                        form: {
-                            input_label: 'Status',
-                            input_type: 'checkbox',
+                    "ui": {
+                        "noteShow": false, // show text information
+                        "noteText": "The pet status in the system", // plain text information
+                        "mask": "",
+                        "form": {
+                            "inputLabel": "Status",
+                            "inputType": "input",
                         },
-                        grid: {
-                            column_header: 'Status',
-                            column_align: 'center',
-                            column_type: 'checkbox',
-                            column_width: '120px'
+                        "grid": {
+                            "columnHeader": "Status",
+                            "columnAlign": "center",
+                            "columnType": "checkbox",
+                            "columnWidth": "120px"
                         }
                     }
                 }]
@@ -186,7 +186,24 @@ Let's check the FAMD for a Petstore:
 | password    | string  | password  | Used to hint UIs the input needs to be obscured. |
 
 
+##### Commom Validation rules
 
+| Name              | Comments                                                 |
+|-------------------|----------------------------------------------------------|
+| NotEmpty          | must contain at least one symbol;                        |
+| Empty             | must be empty;                                           |
+| ValidAplhaNumeric |                                                          |
+| ValidBoolean      | can contain one of 4 values: 'true', 'false', 0 or 1;    |
+| ValidCurrency     |                                                          |
+| ValidDate         | (value from 0000-00-00 to 9999-12-31);                   |
+| ValidDatetime     | (value from 0000-00-00 00:00:00 to 9999:12:31 59:59:59); |
+| ValidEmail        |                                                          |
+| ValidInteger      |                                                          |
+| ValidIPv4         | (value from 0.0.0.0 to 255.255.255.255);                 |
+| ValidNumeric      |                                                          |
+| ValidSIN          | (Social Insurance Number);                               |
+| ValidSSN          | (Social Security Number);                                |
+| ValidTime         | (value from 00:00:00 to 59:59:59);                       |
 
 
 #### Automated software development tools
