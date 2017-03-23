@@ -171,6 +171,8 @@ Let's check the FAMD for a Petstore:
 
 ##### Data types
 
+##### Commom data types
+
 | Common Name | type    | format    | Comments                                         |
 |-------------|---------|-----------|--------------------------------------------------|
 | integer     | integer | int32     | signed 32 bits                                   |
@@ -188,22 +190,25 @@ Let's check the FAMD for a Petstore:
 
 ##### Commom Validation rules
 
-| Name              | Comments                                                 |
-|-------------------|----------------------------------------------------------|
-| NotEmpty          | must contain at least one symbol;                        |
-| Empty             | must be empty;                                           |
-| ValidAplhaNumeric |                                                          |
-| ValidBoolean      | can contain one of 4 values: 'true', 'false', 0 or 1;    |
-| ValidCurrency     |                                                          |
-| ValidDate         | (value from 0000-00-00 to 9999-12-31);                   |
-| ValidDatetime     | (value from 0000-00-00 00:00:00 to 9999:12:31 59:59:59); |
-| ValidEmail        |                                                          |
-| ValidInteger      |                                                          |
-| ValidIPv4         | (value from 0.0.0.0 to 255.255.255.255);                 |
-| ValidNumeric      |                                                          |
-| ValidSIN          | (Social Insurance Number);                               |
-| ValidSSN          | (Social Security Number);                                |
-| ValidTime         | (value from 00:00:00 to 59:59:59);                       |
+| Name                | Comments                                                 |
+|---------------------|----------------------------------------------------------|
+| empty               | must be empty; will be ignored if property is required   |
+| notEmpty            | must contain at least one symbol;                        |
+| validAplhaNumeric   |                                                          |
+| validBoolean        | can contain one of 4 values: 'true', 'false', 0 or 1;    |
+| validCurrency       |                                                          |
+| validDate           | (value from 0000-00-00 to 9999-12-31);                   |
+| validDatetime       | (value from 0000-00-00 00:00:00 to 9999:12:31 59:59:59); |
+| validEmail          |                                                          |
+| validInteger        |                                                          |
+| validIPv4           | (value from 0.0.0.0 to 255.255.255.255);                 |
+| validNumeric        |                                                          |
+| validSIN            | (Social Insurance Number);                               |
+| validSSN            | (Social Security Number);                                |
+| validTime           | (value from 00:00:00 to 59:59:59);                       |
+| validFloat          |                                                          |
+| validCreditCard     |                                                          |
+| validExpirationDate | (Credit card expiration date - MM/YY);                   |
 
 
 #### Automated software development tools
@@ -219,6 +224,13 @@ Let's check the FAMD for a Petstore:
 - CRUD interfaces
 - REST end points
 - Swagger
+
+
+https://localforage.github.io/localForage/#settings-api-setdriver
+http://www.js-data.io/docs/dslocalforageadapter
+http://www.js-data.io/docs/home
+https://www.npmjs.com/package/js-data-localforage
+
 
 ![Automated software development diagram](http://i.imgur.com/HINi6PD.jpg)
 
