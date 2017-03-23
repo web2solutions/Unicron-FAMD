@@ -82,7 +82,6 @@ A FAMDS metadata structure shall to be/contain:
 Let's check the FAMD for a Petstore:
 
 ```javascript
-
 {
     "title": "FAMD Sample App",
     "description": "This is a sample Petstore.",
@@ -99,73 +98,79 @@ Let's check the FAMD for a Petstore:
     "version": "0.0.1",
     "collections": {
         "pets": {
+            "title": "Pets",
+            "description": "Pets collection from the system",
             "model": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
                 "title": "Pet",
-                "description": "Pet from the system", // (GFM syntax can be used for rich text representation)
-                "properties": [{
-                    "name": "Name",
-                    "description": "The pet name", // (GFM syntax can be used for rich text representation)
-                    "type": "string", // http://swagger.io/specification/#dataTypeFormat
-                    "default": null,
-                    "unique": false,
-                    "maxLength": 255,
-                    "minLength": 4,
-                    "maxItems": 0,
-                    "maxItems": 0,
-                    "validate": {
-                        "required": true,
-                        "rules": "NotEmpty",
-                    },
-                    "ui": {
-                        "noteShow": false, // show text information
-                        "noteText": "the pet name", // plain text information
-                        "mask": "",
-                        "form": {
-                            "inputLabel": "Name",
-                            "inputType": "input",
+                "description": "Pet from the system",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "description": "The pet name",
+                        "type": "string",
+                        "default": null,
+                        "unique": false,
+                        "maxLength": 255,
+                        "minLength": 4,
+                        "maxItems": 0,
+                        "maxItems": 0,
+                        "validate": {
+                            "required": true,
+                            "rules": "NotEmpty",
                         },
-                        "grid": {
-                            "columnHeader": "Name",
-                            "columnAlign": "left",
-                            "columnType": "readonly",
-                            "columnWidth": "120px"
+                        "ui": {
+                            "noteShow": false,
+                            "noteText": "the pet name",
+                            "mask": "",
+                            "form": {
+                                "inputLabel": "Name",
+                                "inputType": "input",
+                            },
+                            "grid": {
+                                "columnHeader": "Name",
+                                "columnAlign": "left",
+                                "columnType": "readonly",
+                                "columnWidth": "120px"
+                            }
+                        }
+                    },
+                    "status": {
+                        "title": "Active",
+                        "description": "The pet status in the system",
+                        "type": "string",
+                        "default": null,
+                        "unique": false,
+                        "maxLength": 0,
+                        "minLength": 4,
+                        "maxItems": 0,
+                        "maxItems": 0,
+                        "validate": {
+                            "required": true,
+                            "rules": "NotEmpty",
+                        },
+                        "ui": {
+                            "noteShow": false,
+                            "noteText": "The pet status in the system",
+                            "mask": "",
+                            "form": {
+                                "inputLabel": "Status",
+                                "inputType": "checkbox",
+                            },
+                            "grid": {
+                                "columnHeader": "Status",
+                                "columnAlign": "center",
+                                "columnType": "readonly",
+                                "columnWidth": "120px"
+                            }
                         }
                     }
-                }, {
-                    "name": "Status",
-                    "description": "The pet status in the system", // (GFM syntax can be used for rich text representation)
-                    "type": "boolean", // http://swagger.io/specification/#dataTypeFormat
-                    "default": true,
-                    "unique": false,
-                    "maxLength": 0,
-                    "minLength": 0,
-                    "maxItems": 0,
-                    "minItems": 0,
-                    "validate": {
-                        "required": true,
-                        "rules": "",
-                    },
-                    "ui": {
-                        "noteShow": false, // show text information
-                        "noteText": "The pet status in the system", // plain text information
-                        "mask": "",
-                        "form": {
-                            "inputLabel": "Status",
-                            "inputType": "input",
-                        },
-                        "grid": {
-                            "columnHeader": "Status",
-                            "columnAlign": "center",
-                            "columnType": "checkbox",
-                            "columnWidth": "120px"
-                        }
-                    }
-                }]
+                }
             }
         }
     }
 }
-
 
 ```
 
@@ -215,7 +220,7 @@ Let's check the FAMD for a Petstore:
 
 ##### Visual FAMD editor
 
-##### Generate instead write
+##### RAD, CASE & Scaffold - Generate normalized code instead writing
 
 - Data models logic - client side and server side
 - Validation logic - client and server side
@@ -224,6 +229,7 @@ Let's check the FAMD for a Petstore:
 - CRUD interfaces
 - REST end points
 - Swagger
+- Framework-agnostic, datastore-agnostic JavaScript ORM
 
 
 https://localforage.github.io/localForage/#settings-api-setdriver
