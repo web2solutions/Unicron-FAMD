@@ -218,7 +218,6 @@ Let's check the FAMD for a Petstore:
 
 #### Automated software development tools
 
-##### Visual FAMD editor
 
 ##### RAD, CASE & Scaffold - Generate normalized code instead writing
 
@@ -230,13 +229,14 @@ Let's check the FAMD for a Petstore:
 - REST end points
 - Swagger
 - Framework-agnostic, datastore-agnostic JavaScript ORM
+	
+	https://localforage.github.io/localForage/#settings-api-setdriver
+	http://www.js-data.io/docs/dslocalforageadapter
+	http://www.js-data.io/docs/home
+	https://www.npmjs.com/package/js-data-localforage
 
 
-https://localforage.github.io/localForage/#settings-api-setdriver
-http://www.js-data.io/docs/dslocalforageadapter
-http://www.js-data.io/docs/home
-https://www.npmjs.com/package/js-data-localforage
-
+##### Visual FAMD editor
 
 ![Automated software development diagram](http://i.imgur.com/HINi6PD.jpg)
 
