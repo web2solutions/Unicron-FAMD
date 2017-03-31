@@ -5,6 +5,11 @@ Unicron-FAMDS is a data definition schema which attempts to standardize data sch
 
 FAMDS stands for Framework Agnostic Medatadata standard for Data Schemas
 
+See also:
+
+- [decepticons](https://github.com/web2solutions/decepticons)
+- [SDK](https://github.com/dhtmlx/unicron-sdk) to begin creating an application
+
 ### Scenario
 
 During the process to create web-like softwares from the scratch, it is very commom the fact of `repeating yourself` when implementing models, data validation, REST and CRUD interfaces both on client and server side.
@@ -58,7 +63,7 @@ And, if you build a `CRM` application, you will also need to define the same thi
 
 ### Solutions
 
-Our main problem consist in `repeat yourself` in the software development life cycle. And the main solution, in resume would be something which could implement `DRY` on the side of the software development life cycle.
+Our main problem consist in `to repeat yourself` in the software development life cycle. And the main solution, in resume, would be something which could implement `DRY` on the side of the software development life cycle.
 
 Certainly there are several software development methodologies and paradigms that can be used to achieve this.
 
@@ -230,10 +235,7 @@ Let's check the FAMD for a Petstore:
 - Swagger
 - Framework-agnostic, datastore-agnostic JavaScript ORM
 	
-	https://localforage.github.io/localForage/#settings-api-setdriver
-	http://www.js-data.io/docs/dslocalforageadapter
-	http://www.js-data.io/docs/home
-	https://www.npmjs.com/package/js-data-localforage
+
 
 
 ##### Visual FAMD editor
