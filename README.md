@@ -87,7 +87,6 @@ A FAMDS metadata structure shall to be/contain:
 Let's check the FAMD for a Petstore:
 
 ```javascript
-
 {
     "title": "FAMD Sample App",
     "description": "This is a sample Petstore.",
@@ -103,7 +102,7 @@ Let's check the FAMD for a Petstore:
     },
     "version": "0.0.1",
     "collections": {
-        "pet": {
+        "pets": {
             "title": "Pets",
             "description": "Pets collection from the system",
             "model": {
@@ -111,151 +110,165 @@ Let's check the FAMD for a Petstore:
                 "title": "Pet",
                 "description": "Pet from the system",
                 "type": "object",
-                "properties": {
-                    "name": {
-                        "title": "Name",
-                        "description": "The pet name",
-                        "type": "string",
-                        "default": null,
-                        "unique": false,
-                        "maxLength": 255,
-                        "minLength": 4,
-                        "maxItems": 0,
-                        "minItems": 0,
-                        "validate": {
-                            "required": true,
-                            "rules": "NotEmpty"
-                        },
-                        "ui": {
-                            "noteShow": false,
-                            "noteText": "the pet name",
-                            "mask": "",
-                            "form": {
-                                "inputLabel": "Name",
-                                "inputType": "input"
+                "pet": {
+                    "properties": {
+                        "name": {
+                            "title": "Name",
+                            "description": "The pet name",
+                            "type": "string",
+                            "default": null,
+                            "unique": false,
+                            "maxLength": 255,
+                            "minLength": 4,
+                            "maxItems": 0,
+                            "minItems": 0,
+                            "max": 0,
+                            "min": 0,
+                            "validate": {
+                                "required": true,
+                                "rules": "NotEmpty"
                             },
-                            "grid": {
-                                "columnHeader": "Name",
-                                "columnAlign": "left",
-                                "columnType": "readonly",
-                                "columnWidth": "120px"
+                            "ui": {
+                                "noteShow": false,
+                                "noteText": "the pet name",
+                                "mask": "",
+                                "form": {
+                                    "inputLabel": "Name",
+                                    "inputType": "input"
+                                },
+                                "grid": {
+                                    "columnHeader": "Name",
+                                    "columnAlign": "left",
+                                    "columnType": "readonly",
+                                    "columnWidth": "120px"
+                                }
+                            }
+                        },
+                        "status": {
+                            "title": "Active",
+                            "description": "The pet status in the system",
+                            "type": "string",
+                            "default": null,
+                            "unique": false,
+                            "maxLength": 0,
+                            "minLength": 4,
+                            "maxItems": 0,
+                            "minItems": 0,
+                            "max": 0,
+                            "min": 0,
+                            "validate": {
+                                "required": true,
+                                "rules": "NotEmpty"
+                            },
+                            "ui": {
+                                "noteShow": false,
+                                "noteText": "The pet status in the system",
+                                "mask": "",
+                                "form": {
+                                    "inputLabel": "Status",
+                                    "inputType": "checkbox"
+                                },
+                                "grid": {
+                                    "columnHeader": "Status",
+                                    "columnAlign": "center",
+                                    "columnType": "readonly",
+                                    "columnWidth": "120px"
+                                }
                             }
                         }
                     },
-                    "status": {
-                        "title": "Active",
-                        "description": "The pet status in the system",
-                        "type": "string",
-                        "default": null,
-                        "unique": false,
-                        "maxLength": 0,
-                        "minLength": 4,
-                        "maxItems": 0,
-                        "minItems": 0,
-                        "validate": {
-                            "required": true,
-                            "rules": "NotEmpty"
-                        },
-                        "ui": {
-                            "noteShow": false,
-                            "noteText": "The pet status in the system",
-                            "mask": "",
-                            "form": {
-                                "inputLabel": "Status",
-                                "inputType": "checkbox"
-                            },
-                            "grid": {
-                                "columnHeader": "Status",
-                                "columnAlign": "center",
-                                "columnType": "readonly",
-                                "columnWidth": "120px"
+                    "relations": {
+                        "belongsTo": {
+                            "owner": {
+                                "localField": "owner",
+                                "localKey": "ownerId"
                             }
                         }
-                    }
-                },
-                "belongsTo": {
-                    "owner": {
-                        "localField": "owner", // pet.owner -> reference to this pets's owner
-                        "localKey": "ownerId" // the name of the field on an post that points to its parent user
                     }
                 }
             }
         },
-        "owner": {
+        "owners": {
             "title": "Pets Owner",
             "description": "Pets Owner collection from the system",
             "model": {
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "title": "Qwner",
-                "description": "Pet from the system",
+                "title": "Pet owner",
+                "description": "Pet owner from the system",
                 "type": "object",
-                "properties": {
-                    "name": {
-                        "title": "Name",
-                        "description": "The pet's owner name",
-                        "type": "string",
-                        "default": null,
-                        "unique": false,
-                        "maxLength": 255,
-                        "minLength": 4,
-                        "maxItems": 0,
-                        "minItems": 0,
-                        "validate": {
-                            "required": true,
-                            "rules": "NotEmpty"
-                        },
-                        "ui": {
-                            "noteShow": false,
-                            "noteText": "the pet's owner name",
-                            "mask": "",
-                            "form": {
-                                "inputLabel": "Name",
-                                "inputType": "input"
+                "owner": {
+                    "properties": {
+                        "name": {
+                            "title": "Name",
+                            "description": "The pet's owner name",
+                            "type": "string",
+                            "default": null,
+                            "unique": false,
+                            "maxLength": 255,
+                            "minLength": 4,
+                            "maxItems": 0,
+                            "minItems": 0,
+                            "max": 0,
+                            "min": 0,
+                            "validate": {
+                                "required": true,
+                                "rules": "NotEmpty"
                             },
-                            "grid": {
-                                "columnHeader": "Name",
-                                "columnAlign": "left",
-                                "columnType": "readonly",
-                                "columnWidth": "120px"
+                            "ui": {
+                                "noteShow": false,
+                                "noteText": "the pet's owner name",
+                                "mask": "",
+                                "form": {
+                                    "inputLabel": "Name",
+                                    "inputType": "input"
+                                },
+                                "grid": {
+                                    "columnHeader": "Name",
+                                    "columnAlign": "left",
+                                    "columnType": "readonly",
+                                    "columnWidth": "120px"
+                                }
+                            }
+                        },
+                        "status": {
+                            "title": "Active",
+                            "description": "The owner status in the system",
+                            "type": "string",
+                            "default": null,
+                            "unique": false,
+                            "maxLength": 0,
+                            "minLength": 4,
+                            "maxItems": 0,
+                            "minItems": 0,
+                            "max": 0,
+                            "min": 0,
+                            "validate": {
+                                "required": true,
+                                "rules": "NotEmpty"
+                            },
+                            "ui": {
+                                "noteShow": false,
+                                "noteText": "The owner status in the system",
+                                "mask": "",
+                                "form": {
+                                    "inputLabel": "Status",
+                                    "inputType": "checkbox"
+                                },
+                                "grid": {
+                                    "columnHeader": "Status",
+                                    "columnAlign": "center",
+                                    "columnType": "readonly",
+                                    "columnWidth": "120px"
+                                }
                             }
                         }
                     },
-                    "status": {
-                        "title": "Active",
-                        "description": "The owner status in the system",
-                        "type": "string",
-                        "default": null,
-                        "unique": false,
-                        "maxLength": 0,
-                        "minLength": 4,
-                        "maxItems": 0,
-                        "minItems": 0,
-                        "validate": {
-                            "required": true,
-                            "rules": "NotEmpty"
-                        },
-                        "ui": {
-                            "noteShow": false,
-                            "noteText": "The owner status in the system",
-                            "mask": "",
-                            "form": {
-                                "inputLabel": "Status",
-                                "inputType": "checkbox"
-                            },
-                            "grid": {
-                                "columnHeader": "Status",
-                                "columnAlign": "center",
-                                "columnType": "readonly",
-                                "columnWidth": "120px"
+                    "relations": {
+                        "hasMany": {
+                            "pet": {
+                                "localField": "pets",
+                                "foreignKey": "ownerId"
                             }
-                        }
-                    }
-                },
-                "relations": {
-                    "hasMany": {
-                        "pet": {
-                            "localField": "pets", // owner.pets -> array of pets of this owner
-                            "foreignKey": "ownerId" // the name of the field on a pet that points to its parent owner
                         }
                     }
                 }
